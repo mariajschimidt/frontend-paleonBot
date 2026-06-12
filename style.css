@@ -28,17 +28,34 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
   background-color: var(--bg-deep-forest);
-  background-image: 
+  background-image:
     radial-gradient(circle at center, transparent 0%, var(--bg-deep-forest) 100%),
     url("https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=2000&auto=format&fit=crop");
+
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+
   font-family: var(--font-body);
   color: var(--text-light);
+
+  overflow-y: auto;
   overflow-x: hidden;
+
   position: relative;
+
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE e Edge legado */
+  -ms-overflow-style: none;
+}
+
+/* Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .background-overlay {
@@ -248,11 +265,20 @@ body {
 /* Chat Container */
 .chat-container {
   flex: 1;
-  background: url("https://www.transparenttextures.com/patterns/aged-paper.png"), var(--parchment-beige);
+  min-height: 700px;
+
+  background:
+    url("https://www.transparenttextures.com/patterns/aged-paper.png"),
+    var(--parchment-beige);
+
   border-radius: 8px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.8), inset 0 0 80px rgba(122,92,59,0.3);
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.8),
+    inset 0 0 80px rgba(122,92,59,0.3);
+
   display: flex;
   flex-direction: column;
+
   position: relative;
   overflow: hidden;
 }
@@ -261,6 +287,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 0;
   margin: 6px;
   border: 2px solid var(--paper-brown);
   border-radius: 4px;
@@ -290,22 +317,25 @@ body {
 
 .chat-box {
   flex: 1;
+  min-height: 0;
+
   overflow-y: auto;
+  overflow-x: hidden;
+
   padding: 2rem;
+
   scroll-behavior: smooth;
+
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE */
+  -ms-overflow-style: none;
 }
 
-/* Scrollbar Styling for Chat Box */
+/* Chrome, Edge, Safari */
 .chat-box::-webkit-scrollbar {
-  width: 10px;
-}
-.chat-box::-webkit-scrollbar-track {
-  background: rgba(122, 92, 59, 0.2);
-  border-left: 1px solid rgba(122, 92, 59, 0.4);
-}
-.chat-box::-webkit-scrollbar-thumb {
-  background: var(--paper-brown);
-  border-radius: 5px;
+  display: none;
 }
 
 .message {
