@@ -1,4 +1,4 @@
-const URL_BACKEND = 'https://backend-paleonbot.onrender.com';
+const URL_BACKEND = 'https://backend-paleonbot-2.onrender.com';
 
 document.addEventListener('DOMContentLoaded', () => {
     let socket = null;
