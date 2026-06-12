@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador Jurássico</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="particles"></div>
+    
+    <div class="hero-section">
+        <h1 class="hero-title">Explorando o Mundo Jurássico</h1>
+        <p class="hero-subtitle">O Jornal perdido do Explorador</p>
+        <div class="hero-decorations">
+            <span class="decor-line"></span>
+            <span class="compass-rose">❖</span>
+            <span class="decor-line"></span>
+        </div>
+    </div>
+
+    <div class="main-layout">
+        
+        <aside class="journal-sidebar">
+            <div class="sidebar-header">
+                <h2>Notas</h2>
+                <div id="connection-status" class="status-offline">Esperando sinal...</div>
+            </div>
+            
+            <div id="controles" class="sidebar-controls">
+                <button id="iniciarBtn" class="premium-btn"><span class="btn-icon">✧</span> Iniciar Investigação</button>
+                <button id="limparBtn" class="premium-btn outline"><span class="btn-icon">✖</span> Apagar Registros</button>
+                <button id="encerrarBtn" class="premium-btn danger"><span class="btn-icon">⚰</span> Fechar Diário</button>
+            </div>
+            
+            <div class="sidebar-decor">
+                <div class="wax-seal"></div>
+                <p class="sidebar-lore">"Há coisas nessas florestas que não querem ser encontradas."</p>
+            </div>
+        </aside>
+
+        <main class="chat-container">
+            <div class="parchment-border">
+                <header class="chat-header">
+                    <h2>Arquivos</h2>
+                    <p class="subtitle">Registro de descobertas e anomalias</p>
+                </header>
+                
+                <div id="chat-box" class="chat-box">
+                    <!-- Messages will be injected here by script.js -->
+                </div>
+                
+                <footer class="chat-input-area">
+                    <div class="input-wrapper">
+                        <input type="text" id="message-input" placeholder="Inscribe your findings here...">
+                    </div>
+                    <button id="send-button" class="action-btn">Enviar</button>
+                </footer>
+            </div>
+        </main>
+        
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
